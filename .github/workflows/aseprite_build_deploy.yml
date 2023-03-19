@@ -91,6 +91,9 @@ jobs:
           curl -o Aseprite-source.zip -L ${{ needs.check-version.outputs.download_url }}
           unzip Aseprite-source.zip -d aseprite
           mkdir -p aseprite/build
+      - name: (Windows) Setup VS Dev Environment
+        if: matrix.os == 'windows-latest'
+        uses: seanmiddleditch/gha-setup-vsdevenv@v4
       - name: (Windows) Set architecture for the produced binary
         if: matrix.os == 'windows-latest'
         shell: cmd

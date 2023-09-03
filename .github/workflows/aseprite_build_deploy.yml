@@ -1,4 +1,4 @@
-name: Build and deploy Asepritee
+name: Build and deploy Asepriteee
 
 on:
   schedule:
